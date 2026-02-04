@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/grupe-program/page": "app/grupe-program/page.js",
+  "/preturi/page": "app/preturi/page.js",
+  "/contact/page": "app/contact/page.js"
+}
