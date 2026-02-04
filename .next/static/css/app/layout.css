@@ -594,6 +594,12 @@ video {
 .top-1\/3 {
   top: 33.333333%;
 }
+.left-\[-10000px\] {
+  left: -10000px;
+}
+.top-auto {
+  top: auto;
+}
 .z-10 {
   z-index: 10;
 }
@@ -645,11 +651,11 @@ video {
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
-.h-10 {
-  height: 2.5rem;
-}
 .h-2 {
   height: 0.5rem;
+}
+.h-20 {
+  height: 5rem;
 }
 .h-48 {
   height: 12rem;
@@ -672,14 +678,17 @@ video {
 .h-full {
   height: 100%;
 }
+.h-px {
+  height: 1px;
+}
 .min-h-\[60vh\] {
   min-height: 60vh;
 }
 .min-h-\[70vh\] {
   min-height: 70vh;
 }
-.w-10 {
-  width: 2.5rem;
+.w-20 {
+  width: 5rem;
 }
 .w-5 {
   width: 1.25rem;
@@ -702,6 +711,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-px {
+  width: 1px;
 }
 .max-w-3xl {
   max-width: 48rem;
@@ -864,6 +876,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 241 242 / var(--tw-bg-opacity, 1));
 }
+.bg-sky-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 242 254 / var(--tw-bg-opacity, 1));
+}
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
@@ -890,6 +906,10 @@ video {
 }
 .bg-white\/90 {
   background-color: rgb(255 255 255 / 0.9);
+}
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .object-cover {
   -o-object-fit: cover;
@@ -1015,6 +1035,13 @@ video {
   --tw-text-opacity: 1;
   color: rgb(19 119 58 / var(--tw-text-opacity, 1));
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+.text-black\/90 {
+  color: rgb(0 0 0 / 0.9);
+}
 .text-emerald-800 {
   --tw-text-opacity: 1;
   color: rgb(6 95 70 / var(--tw-text-opacity, 1));
@@ -1030,6 +1057,10 @@ video {
 .text-rose-700 {
   --tw-text-opacity: 1;
   color: rgb(190 18 60 / var(--tw-text-opacity, 1));
+}
+.text-sky-800 {
+  --tw-text-opacity: 1;
+  color: rgb(7 89 133 / var(--tw-text-opacity, 1));
 }
 .text-slate-100 {
   --tw-text-opacity: 1;
@@ -1062,9 +1093,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-white\/90 {
-  color: rgb(255 255 255 / 0.9);
 }
 .opacity-0 {
   opacity: 0;

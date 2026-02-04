@@ -30,6 +30,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/despre/page.js"
+    ],
+    "/politica-gdpr/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/politica-gdpr/page.js"
+    ],
+    "/inscriere/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/inscriere/page.js"
     ]
   }
 }

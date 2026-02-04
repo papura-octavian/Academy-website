@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registrationSchema, type RegistrationPayload } from "@/lib/registrationSchema";
@@ -13,7 +13,6 @@ import { Select } from "@/components/ui/Select";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Button } from "@/components/ui/Button";
 import { SuccessScreen } from "@/components/registration/SuccessScreen";
-import { registerAction } from "@/app/inscriere/actions";
 
 const DRAFT_KEY = "af_draft";
 
@@ -35,7 +34,8 @@ export function RegistrationWizard() {
   const [step, setStep] = useState(1);
   const [success, setSuccess] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
-  const [isPending, startTransition] = useTransition();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
 
   const {
     register,
@@ -107,22 +107,62 @@ export function RegistrationWizard() {
 
   const goBack = () => setStep((prev) => Math.max(prev - 1, 1));
 
-  const onSubmit = (data: RegistrationPayload) => {
+  const onSubmit = async (data: RegistrationPayload) => {
     setServerError(null);
-    startTransition(async () => {
-      try {
-        const result = await registerAction(data);
-        if (result?.ok) {
-          setSuccess(true);
-          localStorage.removeItem(DRAFT_KEY);
-        } else {
-          setServerError(result?.message ?? "Nu am putut trimite înscrierea. Te rugăm să încerci din nou.");
-        }
-      } catch (error) {
-        console.error(error);
-        setServerError("Nu am putut trimite înscrierea. Te rugăm să încerci din nou.");
+
+    if (honeypot.trim()) {
+      setSuccess(true);
+      localStorage.removeItem(DRAFT_KEY);
+      reset(defaultValues);
+      return;
+    }
+
+    if (
+      !data.childName.trim() ||
+      !data.birthDate.trim() ||
+      !data.parentName.trim() ||
+      !data.phone.trim() ||
+      !data.group.trim() ||
+      !data.location.trim()
+    ) {
+      setServerError("Completează toate câmpurile obligatorii.");
+      return;
+    }
+
+    const payload = {
+      childName: data.childName.trim(),
+      birthDate: data.birthDate,
+      parentName: data.parentName.trim(),
+      phone: data.phone.trim(),
+      group: data.group,
+      baseLocation: data.location,
+      level: data.level?.trim() ?? "",
+      email: data.email?.trim() ?? "",
+      city: data.city?.trim() ?? ""
+    };
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://signup-worker.kebulann.workers.dev/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        localStorage.removeItem(DRAFT_KEY);
+        reset(defaultValues);
+        return;
       }
-    });
+
+      const message = await response.text();
+      setServerError(message || "Nu am putut trimite înscrierea. Te rugăm să încerci din nou.");
+    } catch {
+      setServerError("Nu am putut trimite înscrierea. Te rugăm să încerci din nou.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (success) {
@@ -131,6 +171,16 @@ export function RegistrationWizard() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+      <input
+        type="text"
+        name="company"
+        autoComplete="off"
+        tabIndex={-1}
+        aria-hidden="true"
+        className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden"
+        value={honeypot}
+        onChange={(event) => setHoneypot(event.target.value)}
+      />
       <Progress step={step} total={3} />
 
       {step === 1 ? (
@@ -249,8 +299,8 @@ export function RegistrationWizard() {
             Continuă
           </Button>
         ) : (
-          <Button type="submit" disabled={!canProceed || isPending}>
-            {isPending ? "Se trimite..." : "Trimite înscrierea"}
+          <Button type="submit" disabled={!canProceed || isSubmitting}>
+            {isSubmitting ? "Se trimite..." : "Trimite înscrierea"}
           </Button>
         )}
       </div>

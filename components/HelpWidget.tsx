@@ -26,6 +26,12 @@ export function HelpWidget() {
           <a href={SITE.whatsappHref} className="block rounded-xl bg-emerald-100 px-3 py-2 text-sm font-semibold text-emerald-800">
             WhatsApp
           </a>
+          <a
+            href={`mailto:${SITE.email}`}
+            className="block rounded-xl bg-sky-100 px-3 py-2 text-sm font-semibold text-sky-800"
+          >
+            Email
+          </a>
           <div className="rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-600">
             Program: {SITE.program}
           </div>

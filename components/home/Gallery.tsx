@@ -3,18 +3,22 @@
 import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/Button";
-
-const images = [
-  "/gallery-1.jpg",
-  "/gallery-2.jpg",
-  "/gallery-3.jpg",
-  "/gallery-4.jpg",
-  "/gallery-5.jpg",
-  "/gallery-6.jpg"
-];
+import { SITE } from "@/lib/constants";
 
 export function Gallery() {
   const [open, setOpen] = useState(false);
+  const rawGalleryVideo = SITE.media.galleryVideo.trim();
+  const galleryVideo = rawGalleryVideo.startsWith("/public/")
+    ? rawGalleryVideo.replace("/public", "")
+    : rawGalleryVideo;
+  const isVideoFile = /\.(mp4|webm|ogg)$/i.test(galleryVideo);
+  const youtubeMatch = galleryVideo.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]{6,})/i
+  );
+  const youtubeEmbed = youtubeMatch
+    ? `https://www.youtube.com/embed/${youtubeMatch[1]}`
+    : null;
+  const iframeSrc = youtubeEmbed ?? galleryVideo;
 
   return (
     <section className="container py-16">
@@ -28,14 +32,14 @@ export function Gallery() {
         </Button>
       </div>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {images.map((src) => (
+        {SITE.media.gallery.map((src) => (
           <div key={src} className="overflow-hidden rounded-2xl">
             <img
               src={src}
               alt="Galerie academie"
               className="h-48 w-full object-cover transition duration-300 hover:scale-105"
               onError={(event) => {
-                (event.currentTarget as HTMLImageElement).src = "/hero.jpg";
+                (event.currentTarget as HTMLImageElement).src = SITE.media.heroImage;
               }}
             />
           </div>
@@ -59,13 +63,20 @@ export function Gallery() {
               </button>
             </div>
             <div className="aspect-video w-full">
-              <iframe
-                title="Video academie"
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              {isVideoFile ? (
+                <video className="h-full w-full" controls preload="metadata" poster={SITE.media.heroImage}>
+                  <source src={galleryVideo} type="video/mp4" />
+                  Browser-ul tău nu suportă redarea video.
+                </video>
+              ) : (
+                <iframe
+                  title="Video academie"
+                  className="h-full w-full"
+                  src={iframeSrc}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
             </div>
           </div>
         </div>

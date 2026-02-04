@@ -65,7 +65,7 @@ export default function ContactPage() {
         <div className="card overflow-hidden">
           <iframe
             title="Hartă locație"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=26.070%2C44.430%2C26.120%2C44.460&layer=mapnik"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=23.840403%2C44.36325%2C23.880403%2C44.40325&layer=mapnik"
             className="h-72 w-full border-0"
             loading="lazy"
           />

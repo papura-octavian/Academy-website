@@ -18,14 +18,14 @@ export function Hero() {
             muted
             loop
             playsInline
-            poster="/hero.jpg"
+            poster={SITE.media.heroImage}
             onError={() => setVideoError(true)}
           >
-            <source src="/hero.mp4" type="video/mp4" />
+            <source src={SITE.media.heroVideo} type="video/mp4" />
           </video>
         ) : (
           <img
-            src="/hero.jpg"
+            src={SITE.media.heroImage}
             alt="Antrenament fotbal"
             className="h-full w-full object-cover"
           />

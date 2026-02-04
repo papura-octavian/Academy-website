@@ -4,7 +4,6 @@ import { AgeGroups } from "@/components/home/AgeGroups";
 import { ScheduleLocation } from "@/components/home/ScheduleLocation";
 import { Coaches } from "@/components/home/Coaches";
 import { Gallery } from "@/components/home/Gallery";
-import { Testimonials } from "@/components/home/Testimonials";
 import { FAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { Reveal } from "@/components/Motion";
@@ -29,9 +28,6 @@ export function HomePage() {
       </Reveal>
       <Reveal>
         <Gallery />
-      </Reveal>
-      <Reveal>
-        <Testimonials />
       </Reveal>
       <Reveal>
         <FAQ />

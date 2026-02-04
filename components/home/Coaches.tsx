@@ -1,8 +1,6 @@
 import { SectionHeading } from "@/components/SectionHeading";
 import { SITE } from "@/lib/constants";
 
-const coachPhotos = ["/coach-1.jpg", "/coach-2.jpg", "/coach-3.jpg"];
-
 export function Coaches() {
   return (
     <section className="container py-16">
@@ -17,7 +15,7 @@ export function Coaches() {
             className="card overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-soft"
           >
             <img
-              src={coachPhotos[index] ?? "/hero.jpg"}
+              src={SITE.media.coachPhotos[index] ?? SITE.media.heroImage}
               alt={coach}
               className="h-48 w-full object-cover"
             />

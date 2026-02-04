@@ -22,8 +22,12 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/90 backdrop-blur">
       <div className="container flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-white font-bold">
-            AF
+          <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl bg-white">
+            <img
+              src={SITE.media.logo}
+              alt={`${SITE.name} logo`}
+              className="h-full w-full object-contain"
+            />
           </div>
           <div>
             <p className="text-sm font-bold text-slate-900">{SITE.name}</p>
