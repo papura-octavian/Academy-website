@@ -1,13 +1,13 @@
 export const SITE = {
-  name: "Deselnicu Goalkeeping Academy",
-  slogan: "Academie de de portari",
+  name: "Deselnicu Academy Craiova",
+  slogan: "Academie de fotbal",
   owner: "Deselnicu Luigi Gabriel",
-  coaches: ["Deselnicu Luigi Gabriel", "Firulescu Marius", "Papura Corneliu Octavian"],
-  phoneDisplay: "+40 721 149 372",
-  phoneHref: "tel:+40721149372",
-  whatsappHref: "https://wa.me/40721149372",
-  email: "skipittools@gmail.com",
-  address: "Comuna Mischii, 207280 Craiova",
+  coaches: ["Deselnicu Luigi Gabriel"],
+  phoneDisplay: "+40 775 208 877",
+  phoneHref: "tel:+40775208877",
+  whatsappHref: "https://wa.me/40775208877",
+  email: "deselniculuigi39@gmail.com",
+  address: "Şcoala nr. 23 Craiova",
   program: "Luni - Vineri: 16:00 - 20:00 | Sâmbătă: 10:00 - 14:00",
   socials: {
     instagram: "https://instagram.com/cont",
@@ -69,34 +69,17 @@ export const SITE = {
       maxAge: 12,
       description: "Dezvoltare tactică și intensitate crescută."
     },
-    {
-      id: "avansat",
-      label: "Avansat (13-16 ani)",
-      minAge: 13,
-      maxAge: 16,
-      description: "Performanță, strategie și pregătire fizică."
-    }
   ],
   pricing: [
     {
-      name: "Pachet Start",
-      price: "300 lei / lună",
-      details: "2 antrenamente / săptămână"
-    },
-    {
-      name: "Pachet Plus",
-      price: "550 lei / lună",
-      details: "3 antrenamente / săptămână"
-    },
-    {
-      name: "Pachet Performanță",
-      price: "800 lei / lună",
+      name: "Abonament",
+      price: "350 lei / lună",
       details: "4 antrenamente / săptămână"
     }
   ],
   location: {
-    lat: "44.383250",
-    lng: "23.860403"
+    lat: "44.32698469886162",
+    lng: "23.806496921116587"
   }
 };
 
@@ -104,6 +87,6 @@ export const LOCATIONS = [
   {
     id: "central",
     name: "Baza sportivă (principală)",
-    address: "Comuna Mischii, 207280 Craiova"
+    address: "Şcoala nr. 23 Craiova"
   }
 ];

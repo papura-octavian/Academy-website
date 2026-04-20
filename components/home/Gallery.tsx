@@ -24,8 +24,7 @@ export function Gallery() {
     <section className="container py-16">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <SectionHeading
-          title="Galerie"
-          subtitle="Momente reale din antrenamentele și meciurile noastre."
+          title="Despre Antrenor"
         />
         <Button variant="secondary" onClick={() => setOpen(true)}>
           Vezi video
