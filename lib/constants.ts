@@ -20,7 +20,7 @@ export const SITE = {
     heroVideo: "/hero.mp4",
     heroImage: "/hero_2.jpg",
     galleryVideo: ".",
-    coachPhotos: ["/coach-1.jpg", "/coach-2.jpg", "/coach-3.jpg"],
+    coachPhotos: ["/coach-1.3.jpg", "/coach-2.jpg", "/coach-3.jpg"],
     gallery: ["/gallery-1.jpg", "/gallery-2.jpg", "/gallery-3.jpg", "/certificat_1.png", "/certificat_2.png"]
   },
   faq: [
