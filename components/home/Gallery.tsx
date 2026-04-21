@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Button } from "@/components/ui/Button";
 import { SITE } from "@/lib/constants";
 
 export function Gallery() {
@@ -27,9 +26,6 @@ export function Gallery() {
         <SectionHeading
           title="Despre Antrenor"
         />
-        <Button variant="secondary" onClick={() => setVideoOpen(true)}>
-          Vezi video
-        </Button>
       </div>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SITE.media.gallery.map((src) => (
