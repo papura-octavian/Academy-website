@@ -5,3 +5,4 @@ prompts/
 .next/
 out/
 tsconfig.tsbuildinfo
+.codex

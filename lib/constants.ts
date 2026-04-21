@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/sitePaths";
+
 export const SITE = {
   name: "Deselnicu Academy Craiova",
   slogan: "Academie de fotbal",
@@ -16,12 +18,22 @@ export const SITE = {
     facebook: "https://facebook.com/cont"
   },
   media: {
-    logo: "/logo.png",
-    heroVideo: "/hero.mp4",
-    heroImage: "/hero_2.jpg",
+    logo: withBasePath("/logo.png"),
+    heroVideo: withBasePath("/hero.mp4"),
+    heroImage: withBasePath("/hero_2.jpg"),
     galleryVideo: ".",
-    coachPhotos: ["/coach-1.3.jpg", "/coach-2.jpg", "/coach-3.jpg"],
-    gallery: ["/gallery-1.jpg", "/gallery-2.jpg", "/gallery-3.jpg", "/certificat_1.png", "/certificat_2.png"]
+    coachPhotos: [
+      withBasePath("/coach-1.3.jpg"),
+      withBasePath("/coach-2.jpg"),
+      withBasePath("/coach-3.jpg")
+    ],
+    gallery: [
+      withBasePath("/gallery-1.jpg"),
+      withBasePath("/gallery-2.jpg"),
+      withBasePath("/gallery-3.jpg"),
+      withBasePath("/certificat_1.png"),
+      withBasePath("/certificat_2.png")
+    ]
   },
   faq: [
     {
