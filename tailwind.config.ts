@@ -45,7 +45,7 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"]
+        sans: ["Segoe UI", "Helvetica Neue", "Arial", "system-ui", "sans-serif"]
       },
       boxShadow: {
         soft: "0 10px 30px -12px rgba(15, 23, 42, 0.25)",

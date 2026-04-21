@@ -3,3 +3,5 @@ resources/
 docs/
 prompts/
 .next/
+out/
+tsconfig.tsbuildinfo
