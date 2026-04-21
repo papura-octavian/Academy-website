@@ -18,10 +18,10 @@ export const SITE = {
   media: {
     logo: "/logo.png",
     heroVideo: "/hero.mp4",
-    heroImage: "/hero.jpg",
+    heroImage: "/hero_2.jpg",
     galleryVideo: "https://youtu.be/z69NhNG1e0w?si=5Mav5iFeWs8qX8yU",
     coachPhotos: ["/coach-1.jpg", "/coach-2.jpg", "/coach-3.jpg"],
-    gallery: ["/gallery-1.jpg", "/gallery-2.jpg", "/gallery-3.jpg"]
+    gallery: ["/gallery-1.jpg", "/gallery-2.jpg", "/gallery-3.jpg", "/certificat_1.png", "/certificat_2.png"]
   },
   faq: [
     {

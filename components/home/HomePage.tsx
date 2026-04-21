@@ -7,12 +7,10 @@ import { Gallery } from "@/components/home/Gallery";
 import { FAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { Reveal } from "@/components/Motion";
-import { GradientBlobs } from "@/components/GradientBlobs";
 
 export function HomePage() {
   return (
     <div className="relative">
-      <GradientBlobs />
       <Hero />
       <Reveal>
         <Benefits />

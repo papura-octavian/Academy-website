@@ -14,7 +14,7 @@ export function ScheduleLocation() {
           <div className="card overflow-hidden">
             <iframe
               title="Hartă locație"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=23.840403%2C44.36325%2C23.880403%2C44.40325&layer=mapnik"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=23.804%2C44.325%2C23.809%2C44.329&layer=mapnik&marker=44.32698469886162%2C23.806496921116587"
               className="h-72 w-full border-0"
               loading="lazy"
             />
