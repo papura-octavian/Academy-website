@@ -12,10 +12,10 @@ export const SITE = {
   address: "Şcoala nr. 23 Craiova",
   program: "Luni - Vineri: 16:00 - 20:00 | Sâmbătă: 10:00 - 14:00",
   socials: {
-    instagram: "https://instagram.com/cont",
-    tiktok: "https://tiktok.com/@cont",
-    youtube: "https://youtube.com/@cont",
-    facebook: "https://facebook.com/cont"
+    instagram: "https://www.instagram.com/deselnicu.academy.craiova/",
+    tiktok: "https://www.tiktok.com/@echipamente_legea",
+    youtube: "https://www.youtube.com/watch?v=AlnHNi0hdO0",
+    facebook: "https://www.facebook.com/luigi.deselnicu.9"
   },
   media: {
     logo: withBasePath("/logo.png"),
