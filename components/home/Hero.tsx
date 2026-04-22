@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { SITE } from "@/lib/constants";
@@ -7,6 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 
 export function Hero() {
   const [videoError, setVideoError] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   return (
     <section className="relative overflow-hidden">
@@ -23,16 +23,18 @@ export function Hero() {
           >
             <source src={SITE.media.heroVideo} type="video/mp4" />
           </video>
-        ) : (
+        ) : !imgError ? (
           <img
             src={SITE.media.heroImage}
             alt="Antrenament fotbal"
             className="h-full w-full object-cover"
+            onError={() => setImgError(true)}
           />
+        ) : (
+          <div className="h-full w-full bg-slate-800" />
         )}
         <div className="absolute inset-0 bg-slate-950/60" />
       </div>
-
       <div className="container relative z-10 flex min-h-[70vh] flex-col justify-center py-20 text-white">
         <Badge className="w-fit bg-white/15 text-white">Înscrieri deschise</Badge>
         <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">
