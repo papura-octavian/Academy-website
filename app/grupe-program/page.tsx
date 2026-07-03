@@ -1,6 +1,5 @@
 import { SectionHeading } from "@/components/SectionHeading";
 import { GROUPS } from "@/lib/groups";
-import { SITE } from "@/lib/constants";
 
 export default function GrupeProgramPage() {
   return (
@@ -23,11 +22,10 @@ export default function GrupeProgramPage() {
         ))}
       </div>
       <div className="mt-10 card p-6">
-        <h3 className="text-lg font-semibold text-slate-900">Program general</h3>
-        <p className="mt-2 text-sm text-slate-600">{SITE.program}</p>
-        <p className="mt-4 text-sm text-slate-600">
-          Programul final este stabilit după vârstă și nivel. Te contactăm pentru
-          confirmare.
+        <h3 className="text-lg font-semibold text-slate-900">Program</h3>
+        <p className="mt-2 text-sm text-slate-600">
+          Programul este stabilit telefonic, după vârstă și nivel. Te contactăm
+          pentru confirmare.
         </p>
       </div>
     </section>

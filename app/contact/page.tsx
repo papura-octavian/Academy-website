@@ -26,7 +26,6 @@ export default function ContactPage() {
           </p>
           <p className="text-sm text-slate-600">Telefon: {SITE.phoneDisplay}</p>
           <p className="text-sm text-slate-600">Email: {SITE.email}</p>
-          <p className="text-sm text-slate-600">Program: {SITE.program}</p>
           <div className="flex flex-wrap gap-3 pt-2 text-sm">
             <a
               href={SITE.socials.instagram}
@@ -65,7 +64,7 @@ export default function ContactPage() {
         <div className="card overflow-hidden">
           <iframe
             title="Hartă locație"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=23.804%2C44.325%2C23.809%2C44.329&layer=mapnik&marker=44.32698469886162%2C23.806496921116587"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=23.81211251020432%2C44.303800261460275%2C23.816570341587067%2C44.305449100184276&amp;layer=mapnik&amp;marker=44.304623726868094%2C23.81434142589569"
             className="h-72 w-full border-0"
             loading="lazy"
           />

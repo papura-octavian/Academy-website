@@ -7,14 +7,14 @@ export function ScheduleLocation() {
       <div className="absolute inset-0 subtle-grid opacity-20" />
       <div className="container relative">
         <SectionHeading
-          title="Program și locație"
-          subtitle="Găsești ușor terenul și programul potrivit copilului tău."
+          title="Locație"
+          subtitle="Găsești ușor terenul unde au loc antrenamentele."
         />
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="card overflow-hidden">
             <iframe
               title="Hartă locație"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=23.804%2C44.325%2C23.809%2C44.329&layer=mapnik&marker=44.32698469886162%2C23.806496921116587"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=23.81211251020432%2C44.303800261460275%2C23.816570341587067%2C44.305449100184276&amp;layer=mapnik&amp;marker=44.304623726868094%2C23.81434142589569"
               className="h-72 w-full border-0"
               loading="lazy"
             />
@@ -22,10 +22,8 @@ export function ScheduleLocation() {
           <div className="card p-6">
             <p className="text-sm font-semibold text-slate-800">Adresă</p>
             <p className="mt-2 text-sm text-slate-600">{SITE.address}</p>
-            <p className="mt-4 text-sm font-semibold text-slate-800">Program antrenamente</p>
-            <p className="mt-2 text-sm text-slate-600">{SITE.program}</p>
             <p className="mt-4 text-sm text-slate-600">
-              Pentru o potrivire perfectă, confirmăm programul după înscriere.
+              Programul antrenamentelor se stabilește telefonic, după înscriere.
             </p>
           </div>
         </div>

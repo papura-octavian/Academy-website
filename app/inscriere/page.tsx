@@ -28,7 +28,6 @@ export default function InscrierePage() {
             <p className="text-sm font-semibold text-slate-800">Contact direct</p>
             <p className="mt-2 text-sm text-slate-600">Telefon: {SITE.phoneDisplay}</p>
             <p className="text-sm text-slate-600">Email: {SITE.email}</p>
-            <p className="text-sm text-slate-600">Program: {SITE.program}</p>
           </div>
         </aside>
       </div>

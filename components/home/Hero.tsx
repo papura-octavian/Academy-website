@@ -50,7 +50,7 @@ export function Hero() {
             Înscrie copilul
           </Button>
           <Button href="/#grupe" variant="secondary" size="lg" className="bg-white/90">
-            Vezi grupele și programul
+            Vezi grupele
           </Button>
         </div>
       </div>

@@ -29,9 +29,6 @@ export function HelpWidget() {
             >
               Email
             </a>
-            <div className="rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-600">
-              Program: {SITE.program}
-            </div>
           </div>
         </div>
       ) : null}

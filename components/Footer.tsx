@@ -14,7 +14,6 @@ export function Footer() {
           <p className="text-sm font-semibold text-slate-800">Contact rapid</p>
           <p className="text-sm text-slate-600">Telefon: {SITE.phoneDisplay}</p>
           <p className="text-sm text-slate-600">Email: {SITE.email}</p>
-          <p className="text-sm text-slate-600">Program: {SITE.program}</p>
         </div>
         <div className="space-y-2">
           <p className="text-sm font-semibold text-slate-800">Informații</p>
